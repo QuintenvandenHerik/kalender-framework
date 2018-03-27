@@ -31,21 +31,14 @@ array (size=5)
   'month' => string '12' (length=2)
   'year' => string '1999' (length=4)
 */
-  		$data['person'] = $edit['person'];
-  		$data['year'] = $edit['year'];
-  		$data['month'] = $edit['month'];
-  		$data['day'] = $edit['day'];
-   		$data['id'] = $edit['id'];
 
-
-		render("birthday/edit", $data);
+		render("birthday/edit", $edit);
 	}
 
 	function editAction() {
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
-		echo "edit Action in Controller";
 		editBirthday($_POST);
 		header('Location: ' . URL . 'kalender/index');
 	}
